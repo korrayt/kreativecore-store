@@ -1,65 +1,33 @@
-# Kreative Core | Vision
+# Kreative Core Store (kreativecore.store)
 
-![Kreative Core Vision Banner](https://kreativecore.store/assets/vision-banner.png)
-
-[![Version](https://img.shields.io/badge/version-1.0.0-6C5CE7.svg)](https://kreativecore.store/vision)
-[![Platform](https://img.shields.io/badge/platform-Adobe%20Premiere%20Pro%20v24%2B-00CEC9.svg)](https://kreativecore.store/vision)
-[![Ecosystem](https://img.shields.io/badge/part%20of-Kreative%20Core%20Suite-1A1A1A.svg)](https://kreativecore.store)
-
-> **"Make It Simple. Make It Magic."**
-
-**Kreative Core | Vision**, Premiere Pro için geliştirilmiş çevrimdışı görsel analiz asistanıdır. Kurgu sürecindeki "arama" angaryasını ortadan kaldırır.
-
-## 🚀 Temel Özellikler
-
-* **🧠 Hibrit Motor:** 50MB altı kurulumla anında nesne tanıma (Lite) + İsteğe bağlı 1.5GB derin analiz (Deep Vision).
-* **🔒 %100 Gizlilik:** Görüntüleriniz bilgisayarınızdan çıkmaz. Bulut yok.
-* **⚡ "The Lifesaver":** Arama sonuçlarından tek tıkla otomatik sekans (stringout) oluşturma.
-* **🔍 Semantik Arama:** "Hüzünlü kalabalık", "Sahilde koşan çocuk" gibi doğal dil aramaları.
-
-## 📦 Kurulum
-
-1.  Paketi [Kreative Core Store](https://www.kreativecore.store/vision) üzerinden indirin.
-2.  ZXP Installer ile Premiere Pro v24+ sürümüne kurun.
-3.  Panelden derin analiz motorunu (Deep Vision) aktif hale getirin.
-
-## 🏗️ Kreative Core Ekosistemi
-
-Bu eklenti, Kreative Core ailesinin bir parçasıdır. Tam bir AI kurgu deneyimi için diğer araçlarımıza göz atın:
-
-| Ürün | Fonksiyon | Teknoloji |
-| :--- | :--- | :--- |
-| **[Vision](https://github.com/kreativecore/vision)** | Görsel Analiz & Arama | PyTorch, CLIP, ONNX |
-| **[Transcribe TR](https://kreativecore.store/transcribe)** | Türkçe Deşifre & Altyazı | OpenAI Whisper (Local) |
+Official corporate web store and product showcase for **Kreative Core**. Hosted on GitHub Pages with 0$ infrastructure cost.
 
 ---
-**Core Architecture by KT.**
-Copyright © 2025 Kreative Core.
 
+## 🌐 Live URL
+- **Official Domain**: [https://www.kreativecore.store](https://www.kreativecore.store)
+- **GitHub Repository**: `korrayt/kreativecore-store`
 
-# Kreative Core Website
+---
 
-Kreative Core is managed as a multi-product digital company with specialized AI workers for strategy, product development, engineering, design, marketing, QA, security, payments, and releases.
+## ⚡ $0-Cost Architecture Manifesto
 
-## Company OS
+- **Hosting**: Free GitHub Pages static site hosting with custom domain (`CNAME: www.kreativecore.store`).
+- **SSL / Security**: Free Google-Managed SSL Certificate with automatic renewal.
+- **Frontend Stack**: Clean HTML5, CSS3, JavaScript, PWA Manifest & Service Worker assets.
+- **Maintenance Cost**: $0.00 / month (100% Free & Sustainable Infrastructure).
 
-Before making changes, read:
+---
 
-- [Kreative Core Company OS](docs/company/KREATIVE_CORE_COMPANY_OS.md)
-- [Organization](docs/company/ORGANIZATION.md)
-- [Product Portfolio](docs/company/PRODUCT_PORTFOLIO.md)
-- [Company Roadmap](docs/company/COMPANY_ROADMAP.md)
-- [Payment Architecture](docs/company/PAYMENT_ARCHITECTURE.md)
-- [Workflow](docs/company/WORKFLOW.md)
-- [Risk Register](docs/company/RISK_REGISTER.md)
+## 📦 Directory Structure
 
-## Agent Instructions
-
-- [Repository Agent Rules](AGENTS.md)
-- [Copilot Instructions](.github/copilot-instructions.md)
-- [Specialized Agents](.github/agents/)
-
-## Operating Principle
-
-Understand first. Plan second. Assign clearly. Build in small steps. Test every change. Fix failures before moving forward. Never report unfinished work as complete.
-
+```
+kreativecore-store/
+├── index.html            # Main Landing Page
+├── blog.html             # Technology & Architecture Blog
+├── transcribe.html       # AI Audio Transcription Product Showcase
+├── vision.html           # Corporate Vision & Roadmap
+├── CNAME                 # Custom Domain binding (www.kreativecore.store)
+├── assets/               # Logos, MP4 Demos & Visual Assets
+└── README.md             # Project Documentation
+```
