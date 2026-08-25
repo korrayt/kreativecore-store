@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreative Core | Vision - AI-Powered Visual Search for Premiere Pro</title>
+    <meta name="description"
+        content="Search your footage with natural language. Face recognition, object detection, semantic search - all running locally in Premiere Pro.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --soft-black: #1A1A1A;
+            --canvas-white: #F9F9F9;
+            --magic-purple: #6C5CE7;
+            --mint-green: #00CEC9;
+            --interface-grey: #2D2D2D;
+            --text-grey: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--canvas-white);
+            color: var(--soft-black);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--soft-black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 36px;
+            margin-right: 12px;
+        }
+
+        .logo span {
+            color: var(--magic-purple);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-grey);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--magic-purple);
+        }
+
+        .hero {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--magic-purple) 0%, #5243C0 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background-color: white;
+            color: var(--magic-purple);
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+        }
+
+        .features {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--canvas-white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(108, 92, 231, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-grey);
+            line-height: 1.7;
+        }
+
+        .workflow {
+            padding: 80px 5%;
+            background: var(--canvas-white);
+        }
+
+        .workflow h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .workflow-steps {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .step-number {
+            background: var(--magic-purple);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: var(--text-grey);
+        }
+
+        .tech-stack {
+            padding: 80px 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .tech-stack h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .tech-stack p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            background: var(--canvas-white);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--soft-black);
+            border: 2px solid var(--magic-purple);
+        }
+
+        footer {
+            background: var(--soft-black);
+            color: #888;
+            padding: 60px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        footer .logo img {
+            filter: brightness(100);
+        }
+
+        footer p span {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Kreative Core">
+            Kreative<span>Core</span>
+        </a>
+        <nav>
+            <a href="index.html#products" class="nav-link">Products</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="mailto:ben@koraytasan.com?subject=Vision%20Inquiry" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Kreative Core | Vision</h1>
+        <p>
+            AI-powered visual search that turns hours of footage scrubbing into seconds of natural language queries.
+            "Find person smiling" - done.
+        </p>
+        <a href="https://github.com/korrayt" class="cta-button">Coming to Adobe Exchange</a>
+    </section>
+
+    <section class="features">
+        <h2>Features That Feel Like Magic</h2>
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3>Semantic Search</h3>
+                <p>Search with natural language: "beach sunset", "person running", "product close-up". Vision
+                    understands context, not just keywords.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">👥</span>
+                <h3>Face Recognition</h3>
+                <p>Automatically cluster faces into "Person 1", "Person 2". Rename once, and Vision updates all clips
+                    featuring that person.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">📍</span>
+                <h3>Location Detection</h3>
+                <p>Visual landmark recognition identifies locations. Tag once, search forever. "Show me all Bosphorus
+                    Bridge shots".</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🎬</span>
+                <h3>Shot Classification</h3>
+                <p>Automatically categorizes shots: Wide, Medium, Close-Up, Steadycam, Handheld. Perfect for finding
+                    coverage.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>The Lifesaver</h3>
+                <p>Search results auto-generate a new sequence with In/Out points set. One click from search to
+                    stringout.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🔒</span>
+                <h3>100% Offline</h3>
+                <p>All AI runs on your machine. No cloud uploads, no credits, no internet required. Your NDA-protected
+                    footage stays private.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="workflow">
+        <h2>How It Works</h2>
+        <div class="workflow-steps">
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Analyze Footage</h3>
+                    <p>Select clip, sequence, or entire project. Vision analyzes with CLIP AI and InsightFace models -
+                        running locally on your GPU.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Search Naturally</h3>
+                    <p>Type what you're looking for: "happy crowd", "interior office", "sunset timelapse". Vision
+                        searches semantically, not just tags.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Review & Refine</h3>
+                    <p>Click any result to preview in Source Monitor. Double-click to load with In/Out points. Refine
+                        face/location tags as you work.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Generate Sequence</h3>
+                    <p>Hit "Create Sequence" (The Lifesaver). Vision generates a stringout with all search results,
+                        perfectly timed. Edit from there.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Powered by State-of-the-Art AI</h2>
+        <p>
+            We leverage the same models used by OpenAI, Google, and Meta - optimized for local deployment. No
+            compromises on accuracy, no cloud dependency.
+        </p>
+        <div class="tech-badges">
+            <span class="tech-badge">OpenAI CLIP</span>
+            <span class="tech-badge">InsightFace</span>
+            <span class="tech-badge">ONNX Runtime</span>
+            <span class="tech-badge">GPU Accelerated</span>
+            <span class="tech-badge">Node.js Backend</span>
+        </div>
+    </section>
+
+    <footer>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo">
+            Kreative<span>Core</span>
+        </a>
+        <p>&copy; 2025 <span>Kreative Core Technologies</span>. All rights reserved.</p>
+        <p style="margin-top:10px; font-size: 0.8rem;">Developed with precision by Koray Taşan.</p>
+        <p style="margin-top:15px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #555;">
+            // Core Architecture by KT.
+        </p>
+    </footer>
+
+</body>
+
+</html>

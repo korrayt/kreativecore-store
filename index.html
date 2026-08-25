@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreative Core | Make It Simple. Make It Magic.</title>
+    <meta name="description"
+        content="Smart plugins for Adobe Creative Cloud that make workflow magic. Enhance your Premiere Pro, After Effects, and Photoshop experience.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* KREATIVE CORE BRAND COLORS */
+            --soft-black: #1A1A1A;
+            --canvas-white: #F9F9F9;
+            --magic-purple: #6C5CE7;
+            --mint-green: #00CEC9;
+            --interface-grey: #2D2D2D;
+            --text-grey: #666666;
+            --adobe-red: #FA0F00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--canvas-white);
+            color: var(--soft-black);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--soft-black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 36px;
+            margin-right: 12px;
+        }
+
+        .logo span {
+            color: var(--magic-purple);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-grey);
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--magic-purple);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 120px 5% 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F4F6F8 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--soft-black);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p.tagline {
+            font-size: 1.5rem;
+            color: var(--text-grey);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            margin-bottom: 45px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background-color: var(--magic-purple);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.4);
+        }
+
+        .cta-button.secondary {
+            background-color: var(--soft-black);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--interface-grey);
+        }
+
+        /* PRODUCTS SECTION */
+        .products {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--soft-black);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--canvas-white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.15);
+            border-color: var(--magic-purple);
+        }
+
+        .product-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--soft-black);
+        }
+
+        .product-card .product-subtitle {
+            font-size: 1rem;
+            color: var(--magic-purple);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .product-card p {
+            color: var(--text-grey);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .product-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .product-card ul li {
+            padding: 8px 0;
+            color: var(--text-grey);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-card ul li::before {
+            content: "✓";
+            color: var(--mint-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-link {
+            display: inline-block;
+            color: var(--magic-purple);
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .product-link:hover {
+            color: var(--soft-black);
+        }
+
+        /* MANIFESTO SECTION */
+        .manifesto {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, var(--magic-purple) 0%, #5243C0 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .manifesto h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .manifesto p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* BLOG PREVIEW */
+        .blog-preview {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .blog-preview h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+        }
+
+        .blog-link-center {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .blog-link-center a {
+            display: inline-block;
+            background: var(--soft-black);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .blog-link-center a:hover {
+            background: var(--magic-purple);
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--soft-black);
+            color: #888;
+            padding: 60px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        footer .logo img {
+            filter: brightness(100);
+        }
+
+        footer p span {
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p.tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero p.subtitle {
+                font-size: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Kreative Core Logo">
+            Kreative<span>Core</span>
+        </a>
+        <nav>
+            <a href="#products" class="nav-link">Products</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="mailto:ben@koraytasan.com?subject=Kreative%20Core%20-%20Inquiry" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>We Code the Routine.<br>You Create the Magic.</h1>
+        <p class="tagline">"Make It Simple. Make It Magic."</p>
+        <p class="subtitle">
+            Smart plugins for Adobe Creative Cloud that turn complex tasks into one-click miracles. Reclaim your time
+            for what truly matters: creativity.
+        </p>
+        <div class="cta-buttons">
+            <a href="#products" class="cta-button">Explore Products</a>
+            <a href="blog.html" class="cta-button secondary">Read Our Blog</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Product Suite</h2>
+        <div class="product-grid">
+
+            <!-- VISION -->
+            <div class="product-card">
+                <h3>Kreative Core | Vision</h3>
+                <p class="product-subtitle">AI-Powered Visual Search for Premiere Pro</p>
+                <p>
+                    Stop scrubbing through hours of footage. Vision analyzes your clips with local AI and lets you
+                    search using natural language: "person smiling", "beach sunset", "product shot".
+                </p>
+                <ul>
+                    <li>Semantic search with CLIP AI</li>
+                    <li>Face recognition & clustering</li>
+                    <li>Auto-generate sequences ("The Lifesaver")</li>
+                    <li>100% offline - your footage never leaves your machine</li>
+                </ul>
+                <a href="vision.html" class="product-link">Learn More →</a>
+            </div>
+
+            <!-- TRANSCRIBE TR -->
+            <div class="product-card">
+                <h3>Kreative Core | Transcribe TR</h3>
+                <p class="product-subtitle">Turkish Speech-to-Text for Premiere Pro</p>
+                <p>
+                    Transcribe a 10-minute video in 20 seconds with 98% accuracy. No cloud, no credits, no waiting. Your
+                    audio stays private, your workflow stays fast.
+                </p>
+                <ul>
+                    <li>Lightning-fast local processing</li>
+                    <li>OpenAI Whisper engine (Turkish optimized)</li>
+                    <li>Native Premiere Pro integration</li>
+                    <li>One-time payment, lifetime use</li>
+                </ul>
+                <a href="transcribe.html" class="product-link">Learn More →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="manifesto">
+        <h2>"Technology That Makes You Forget Technology."</h2>
+        <p>
+            The best technology is invisible. We take months of engineering and compress it into a single button. When
+            an artist spends hours on a task that should take seconds, that's not workflow — that's "busywork". Kreative
+            Core eliminates the busywork so you can focus on the magic only you can create.
+        </p>
+    </section>
+
+    <section class="blog-preview">
+        <h2>Insights & Resources</h2>
+        <div class="blog-link-center">
+            <a href="blog.html">Visit Our Blog →</a>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Logo">
+            Kreative<span>Core</span>
+        </a>
+        <p>&copy; 2025 <span>Kreative Core Technologies</span>. All rights reserved.</p>
+        <p style="margin-top:10px; font-size: 0.8rem;">Developed with precision by Koray Taşan.</p>
+        <p style="margin-top:15px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #555;">
+            // Core Architecture by KT.
+        </p>
+    </footer>
+
+</body>
+
+</html>

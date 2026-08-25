@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Kreative Core - Insights on Adobe Creative Cloud Workflows</title>
+    <meta name="description"
+        content="Expert insights on Adobe Creative Cloud workflows, plugin development, and creative automation.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --soft-black: #1A1A1A;
+            --canvas-white: #F9F9F9;
+            --magic-purple: #6C5CE7;
+            --mint-green: #00CEC9;
+            --text-grey: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--canvas-white);
+            color: var(--soft-black);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--soft-black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 36px;
+            margin-right: 12px;
+        }
+
+        .logo span {
+            color: var(--magic-purple);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-grey);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--magic-purple);
+        }
+
+        .page-header {
+            padding: 80px 5% 60px;
+            text-align: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F4F6F8 100%);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(108, 92, 231, 0.15);
+        }
+
+        .blog-card-content {
+            padding: 30px;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--soft-black);
+        }
+
+        .blog-card p {
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--magic-purple);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer {
+            background: var(--soft-black);
+            color: #888;
+            padding: 60px 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        footer .logo img {
+            filter: brightness(100);
+        }
+
+        footer p span {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Kreative Core">
+            Kreative<span>Core</span>
+        </a>
+        <nav>
+            <a href="index.html#products" class="nav-link">Products</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="mailto:ben@koraytasan.com" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Insights & Resources</h1>
+        <p>Deep dives into Adobe workflow optimization, plugin development, and creative automation.</p>
+    </section>
+
+    <div class="blog-grid">
+
+        <a href="blog/adobe-ecosystem-2025.html" class="blog-card">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <span>📅 November 2025</span>
+                    <span>⏱️ 15 min read</span>
+                </div>
+                <h3>Strategic Expansion Opportunities in the Adobe Creative Cloud Ecosystem</h3>
+                <p>
+                    A comprehensive market analysis revealing the gaps between Adobe's feature set and professional
+                    users' operational needs. Discover untapped plugin opportunities in Premiere Pro, After Effects, and
+                    Photoshop.
+                </p>
+                <span class="read-more">Read Full Report →</span>
+            </div>
+        </a>
+
+        <a href="blog/cep-to-uxp-migration.html" class="blog-card">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <span>📅 November 2025</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <h3>CEP to UXP Migration: What Plugin Developers Need to Know</h3>
+                <p>
+                    Adobe's architectural shift from CEP to UXP creates both challenges and opportunities. Learn which
+                    APIs still require CEP, and how to build hybrid solutions.
+        </a>
+        <p>&copy; 2025 <span>Kreative Core Technologies</span>. All rights reserved.</p>
+        <p style="margin-top:10px; font-size: 0.8rem;">Developed with precision by Koray Taşan.</p>
+        </footer>
+
+</body>
+
+</html>

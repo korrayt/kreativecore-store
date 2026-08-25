@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEP to UXP Migration Guide for Adobe Plugin Developers | Kreative Core</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto:wght@300;400;500&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --soft-black: #1A1A1A;
+            --canvas-white: #F9F9F9;
+            --magic-purple: #6C5CE7;
+            --mint-green: #00CEC9;
+            --text-grey: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: white;
+            color: var(--soft-black);
+            line-height: 1.8;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--soft-black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 36px;
+            margin-right: 12px;
+        }
+
+        .logo span {
+            color: var(--magic-purple);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-grey);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--magic-purple);
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 5% 80px;
+            text-align: center;
+        }
+
+        .article-header h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-meta {
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 5%;
+        }
+
+        .article-content h2 {
+            font-size: 2.2rem;
+            margin: 50px 0 25px;
+        }
+
+        .article-content h3 {
+            font-size: 1.6rem;
+            margin: 35px 0 20px;
+            color: var(--magic-purple);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .article-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 25px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            margin: 30px 0;
+            border-left: 5px solid var(--magic-purple);
+        }
+
+        .highlight-box {
+            background: var(--canvas-white);
+            border-left: 5px solid var(--magic-purple);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: var(--soft-black);
+            color: #888;
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../logo.png" alt="Kreative Core">
+            Kreative<span>Core</span>
+        </a>
+        <nav>
+            <a href="../index.html#products" class="nav-link">Products</a>
+            <a href="../blog.html" class="nav-link">Blog</a>
+            <a href="mailto:ben@koraytasan.com" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <section class="article-header">
+        <h1>CEP to UXP Migration: What Plugin Developers Need to Know</h1>
+        <div class="article-meta">
+            <span>📅 November 2025</span>
+            <span>✍️ Koray Taşan</span>
+            <span>⏱️ 8 min read</span>
+        </div>
+    </section>
+
+    <article class="article-content">
+
+        <p>
+            Adobe's shift from Common Extensibility Platform (CEP) to Unified Extensibility Platform (UXP) is the most
+            significant change to plugin development in a decade. If you're maintaining a CEP-based extension, here's
+            what you need to know — and why rushing to migrate might be a mistake.
+        </p>
+
+        <h2>Why Adobe Is Killing CEP</h2>
+
+        <p>
+            CEP was built on Chromium Embedded Framework — essentially, each panel ran as a full Chrome browser
+            instance. This architectural choice had consequences:
+        </p>
+
+        <ul>
+            <li><strong>Memory bloat:</strong> A single panel could consume 200-500 MB RAM</li>
+            <li><strong>Slow startup:</strong> Loading HTML/CSS/JS through Chromium added 2-3 seconds per panel</li>
+            <li><strong>Security risks:</strong> Full Node.js access meant malicious plugins could wreak havoc</li>
+        </ul>
+
+        <p>
+            For creative apps already pushing hardware limits (looking at you, After Effects), this was unsustainable.
+            Enter UXP.
+        </p>
+
+        <h2>UXP: Faster, Lighter, More Restrictive</h2>
+
+        <p>
+            UXP replaces Chromium with a native JavaScript engine. The benefits are immediate:
+        </p>
+
+        <ul>
+            <li>~70% reduction in memory usage</li>
+            <li>Instant panel loading</li>
+            <li>Consistent UI (Adobe Spectrum Design)</li>
+        </ul>
+
+        <p>
+            But there's a catch: <strong>UXP is far more restrictive</strong>. Features that were trivial in CEP now
+            require workarounds or are impossible.
+        </p>
+
+        <h3>What You Lose in UXP</h3>
+
+        <ul>
+            <li><strong>Arbitrary file system access:</strong> Users must manually grant folder permissions</li>
+            <li><strong>External libraries:</strong> No npm modules that rely on Node.js internals</li>
+            <li><strong>Advanced networking:</strong> WebSocket support is limited</li>
+            <li><strong>DOM manipulation freedom:</strong> Must use Adobe's Spectrum components</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Critical Reality Check:</strong> Some advanced features (like Premiere Pro's Export Controller API)
+            still require CEP or C++ plugins. UXP can't access everything yet.
+        </div>
+
+        <h2>When to Migrate vs. When to Wait</h2>
+
+        <h3>Migrate to UXP If:</h3>
+
+        <ul>
+            <li>Your plugin is UI-focused (color pickers, asset browsers)</li>
+            <li>Performance complaints are common (users report lag)</li>
+            <li>You target Photoshop or XD (UXP-native apps)</li>
+        </ul>
+
+        <h3>Stick with CEP (For Now) If:</h3>
+
+        <ul>
+            <li>You need deep file system integration (media asset management)</li>
+            <li>Your plugin relies on specific Node.js modules</li>
+            <li>You're targeting Premiere Pro's export pipeline</li>
+        </ul>
+
+        <h2>The Hybrid Approach (Our Recommendation)</h2>
+
+        <p>
+            The smartest strategy for complex plugins: <strong>UXP for UI, C++ for backend</strong>.
+        </p>
+
+        <p>Here's how it works:</p>
+
+        <ol>
+            <li>Build your panel UI in UXP (fast, lightweight)</li>
+            <li>Write performance-critical logic in C++ as a native plugin</li>
+            <li>Communicate between them via Adobe's scripting bridge</li>
+        </ol>
+
+        <div class="code-block">
+            // UXP Panel (JavaScript)
+            const { entrypoints } = require("uxp");
+
+            entrypoints.setup({
+            plugin: {
+            create() {
+            // Call C++ plugin via ExtendScript
+            const result = app.executeScript("MyCppPlugin.processVideo()");
+            console.log("C++ returned:", result);
+            }
+            }
+            });
+        </div>
+
+        <p>
+            This gives you UXP's performance benefits while bypassing its limitations. Kreative Core's Vision plugin
+            uses this exact architecture.
+        </p>
+
+        <h2>File System Access: The Biggest Pain Point</h2>
+
+        <p>
+            In CEP, you could read/write anywhere:
+        </p>
+
+        <div class="code-block">
+            // CEP (Old Way)
+            const fs = require('fs');
+            fs.writeFileSync('/Users/editor/Desktop/export.json', data);
+        </div>
+
+        <p>
+            In UXP, users must grant explicit permission:
+        </p>
+
+        <div class="code-block">
+            // UXP (New Way)
+            const { localFileSystem } = require("uxp").storage;
+
+            async function saveFile() {
+            const folder = await localFileSystem.getFolder(); // User picks folder
+            const file = await folder.createFile("export.json");
+            await file.write(data);
+            }
+        </div>
+
+        <p>
+            This adds friction but improves security. Power users appreciate the control.
+        </p>
+
+        <h2>UI Changes: Spectrum or Bust</h2>
+
+        <p>
+            CEP let you use any CSS framework (Bootstrap, Tailwind, custom). UXP enforces Adobe Spectrum:
+        </p>
+
+        <div class="code-block">
+            &lt;sp-button variant="cta"&gt;Process Footage&lt;/sp-button&gt;
+            &lt;sp-slider min="0" max="100" value="50"&gt;&lt;/sp-slider&gt;
+        </div>
+
+        <p>
+            <strong>Pro:</strong> Your plugin looks native. <br>
+            <strong>Con:</strong> Less design freedom.
+        </p>
+
+        <p>
+            For SaaS-like plugins (where brand identity matters), this can be limiting. But for utility tools, Spectrum
+            is perfect.
+        </p>
+
+        <h2>Migration Timeline: Plan for 6-12 Months</h2>
+
+        <p>
+            Here's a realistic migration path:
+        </p>
+
+        <ul>
+            <li><strong>Month 1-2:</strong> Audit current codebase. Identify UXP blockers.</li>
+            <li><strong>Month 3-4:</strong> Build prototype UI in UXP. Test performance gains.</li>
+            <li><strong>Month 5-6:</strong> Migrate core logic. Write C++ modules if needed.</li>
+            <li><strong>Month 7-10:</strong> Beta testing with power users. Fix edge cases.</li>
+            <li><strong>Month 11-12:</strong> Public release. Maintain CEP version for legacy users.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Don't Rush:</strong> Adobe still supports CEP. Premiere Pro 2025 runs CEP panels perfectly. Migrate
+            when UXP truly benefits your users, not just to chase the new platform.
+        </div>
+
+        <h2>Our Experience: Kreative Core Vision</h2>
+
+        <p>
+            When building Vision, we initially tried pure UXP. We hit walls immediately:
+        </p>
+
+        <ul>
+            <li>Needed GPU access for ONNX inference (impossible in UXP)</li>
+            <li>Required deep frame export control (CEP-only API)</li>
+            <li>Wanted background processing (UXP panels pause when hidden)</li>
+        </ul>
+
+        <p>
+            Solution: UXP panel + Node.js backend running as a separate process. Best of both worlds.
+        </p>
+
+        <h2>Key Takeaways</h2>
+
+        <ul>
+            <li>UXP is the future, but CEP isn't dead yet</li>
+            <li>Hybrid (UXP + C++) is the best architecture for complex plugins</li>
+            <li>Migrating blindly can break critical features — audit first</li>
+            <li>Users care about performance and reliability, not platform buzzwords</li>
+        </ul>
+
+    </article>
+
+    <footer>
+        <a href="../index.html" class="logo">
+            <img src="../logo.png" alt="Logo">
+            Kreative<span>Core</span>
+        </a>
+        <p>&copy; 2025 Kreative Core Technologies.</p>
+    </footer>
+
+</body>
+
+</html>
