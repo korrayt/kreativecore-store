@@ -1,450 +1,1789 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kreative Core | Make It Simple. Make It Magic.</title>
-    <meta name="description"
-        content="Smart plugins for Adobe Creative Cloud that make workflow magic. Enhance your Premiere Pro, After Effects, and Photoshop experience.">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kreative Core | Master Innovation Lab & Product Ecosystem</title>
+  <meta name="description" content="Kreative Core: core.action STUDIO, AI Eklentileri, khrysaor, BUILD UP BUILD DOWN, Find My Home ve otonom akıllı ürün ekosistemi. We Code the Routine. You Create the Magic.">
+  <meta name="keywords" content="Kreative Core, core.action STUDIO, AI NLE, Vision AI, Transcribe TR, khrysaor, BUILD UP BUILD DOWN, Find My Home, Koray Taşan, Creative Tech, AI Products">
+  <meta name="author" content="Kreative Core & Koray Taşan">
+  <link rel="canonical" href="https://www.kreativecore.store/">
 
-    <style>
-        :root {
-            /* KREATIVE CORE BRAND COLORS */
-            --soft-black: #1A1A1A;
-            --canvas-white: #F9F9F9;
-            --magic-purple: #6C5CE7;
-            --mint-green: #00CEC9;
-            --interface-grey: #2D2D2D;
-            --text-grey: #666666;
-            --adobe-red: #FA0F00;
-        }
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.kreativecore.store/">
+  <meta property="og:title" content="Kreative Core | Master Innovation Lab & Product Ecosystem">
+  <meta property="og:description" content="Fikirden yaşayan sistemlere: Sinema teknolojileri, otonom yapay zekâ motorları, 3D WebXR simülasyonları ve yaratıcı ürün ekosistemi.">
+  <meta property="og:image" content="https://www.kreativecore.store/assets/projects/core-action.png">
+  <meta property="og:site_name" content="Kreative Core">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.kreativecore.store/">
+  <meta name="twitter:title" content="Kreative Core | Master Innovation Lab & Product Ecosystem">
+  <meta name="twitter:description" content="We Code the Routine. You Create the Magic. 12+ Aktif Yapay Zekâ ve Kreatif Teknoloji Projesi.">
+  <meta name="twitter:image" content="https://www.kreativecore.store/assets/projects/core-action.png">
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--canvas-white);
-            color: var(--soft-black);
-            line-height: 1.6;
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* HEADER */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
+  <style>
+    :root {
+      --bg-dark: #080A0F;
+      --bg-card: #0F131D;
+      --bg-card-hover: #151B29;
+      --bg-panel: rgba(15, 19, 29, 0.75);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(124, 92, 252, 0.4);
+      --border-glow: rgba(0, 229, 212, 0.35);
+      --text-main: #F4F6FB;
+      --text-muted: #8E98AF;
+      --text-dim: #5C657B;
+      --magic-purple: #7C5CFC;
+      --magic-purple-light: #9B82FD;
+      --magic-glow: rgba(124, 92, 252, 0.25);
+      --mint: #00E5D4;
+      --mint-glow: rgba(0, 229, 212, 0.2);
+      --gold: #E5C98F;
+      --gold-glow: rgba(229, 201, 143, 0.2);
+      --rose: #FF4757;
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--soft-black);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .logo img {
-            height: 36px;
-            margin-right: 12px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .logo span {
-            color: var(--magic-purple);
-        }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+    /* Ambient background gradient mesh */
+    .bg-ambient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(124, 92, 252, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(0, 229, 212, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(229, 201, 143, 0.05) 0%, transparent 50%);
+    }
 
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-grey);
-            font-weight: 500;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .nav-link:hover {
-            color: var(--magic-purple);
-        }
+    /* HEADER */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 10, 15, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 120px 5% 80px;
-            text-align: center;
-            background: linear-gradient(180deg, #FFFFFF 0%, #F4F6F8 100%);
-        }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
 
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: var(--soft-black);
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .hero p.tagline {
-            font-size: 1.5rem;
-            color: var(--text-grey);
-            margin-bottom: 15px;
-            font-style: italic;
-        }
+    .brand-logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 0 16px var(--magic-glow);
+    }
 
-        .hero p.subtitle {
-            font-size: 1.2rem;
-            color: var(--text-grey);
-            margin-bottom: 45px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
 
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    .brand-title span {
+      background: linear-gradient(135deg, var(--magic-purple-light), var(--mint));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .cta-button {
-            background-color: var(--magic-purple);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: inline-block;
-        }
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(0, 229, 212, 0.08);
+      border: 1px solid rgba(0, 229, 212, 0.25);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
 
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.4);
-        }
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--mint);
+      animation: pulseAnim 2s infinite ease-in-out;
+    }
 
-        .cta-button.secondary {
-            background-color: var(--soft-black);
-        }
+    @keyframes pulseAnim {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
 
-        .cta-button.secondary:hover {
-            background-color: var(--interface-grey);
-        }
+    nav.header-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
 
-        /* PRODUCTS SECTION */
-        .products {
-            padding: 80px 5%;
-            background: white;
-        }
+    .nav-item {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
 
-        .products h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-            color: var(--soft-black);
-        }
+    .nav-item:hover {
+      color: var(--text-main);
+    }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .nav-item.active {
+      color: var(--magic-purple-light);
+    }
 
-        .product-card {
-            background: var(--canvas-white);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
-        }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.15);
-            border-color: var(--magic-purple);
-        }
+    .btn-header-cta {
+      background: linear-gradient(135deg, var(--magic-purple), #5B44E0);
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 16px var(--magic-glow);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .product-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--soft-black);
-        }
+    .btn-header-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(124, 92, 252, 0.45);
+    }
 
-        .product-card .product-subtitle {
-            font-size: 1rem;
-            color: var(--magic-purple);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+    /* HERO SECTION */
+    section.hero {
+      padding: 90px 0 60px;
+      text-align: center;
+      position: relative;
+    }
 
-        .product-card p {
-            color: var(--text-grey);
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(124, 92, 252, 0.1);
+      border: 1px solid rgba(124, 92, 252, 0.3);
+      border-radius: var(--radius-pill);
+      color: var(--magic-purple-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
 
-        .product-card ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .product-card ul li {
-            padding: 8px 0;
-            color: var(--text-grey);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--magic-purple-light) 60%, var(--mint) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .product-card ul li::before {
-            content: "✓";
-            color: var(--mint-green);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
+    .hero-lead {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
 
-        .product-link {
-            display: inline-block;
-            color: var(--magic-purple);
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    .hero-motto {
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      color: var(--gold);
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
 
-        .product-link:hover {
-            color: var(--soft-black);
-        }
+    .hero-metrics-strip {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 40px auto 30px;
+      padding: 24px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 900px;
+      backdrop-filter: blur(12px);
+    }
 
-        /* MANIFESTO SECTION */
-        .manifesto {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, var(--magic-purple) 0%, #5243C0 100%);
-            color: white;
-            text-align: center;
-        }
+    .metric-box {
+      text-align: center;
+    }
 
-        .manifesto h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: white;
-        }
+    .metric-number {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
 
-        .manifesto p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
+    .metric-number.purple { color: var(--magic-purple-light); }
+    .metric-number.mint { color: var(--mint); }
+    .metric-number.gold { color: var(--gold); }
 
-        /* BLOG PREVIEW */
-        .blog-preview {
-            padding: 80px 5%;
-            background: white;
-        }
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
 
-        .blog-preview h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 50px;
-        }
+    /* QUICK JUMP PILLS */
+    .hero-quick-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-        .blog-link-center {
-            text-align: center;
-            margin-top: 40px;
-        }
+    .quick-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
 
-        .blog-link-center a {
-            display: inline-block;
-            background: var(--soft-black);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+    .quick-pill:hover {
+      background: rgba(124, 92, 252, 0.12);
+      border-color: rgba(124, 92, 252, 0.35);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
 
-        .blog-link-center a:hover {
-            background: var(--magic-purple);
-            transform: translateY(-3px);
-        }
+    /* FLAGSHIP SPOTLIGHT (core.action STUDIO) */
+    section.flagship-spotlight {
+      padding: 50px 0 80px;
+    }
 
-        /* FOOTER */
-        footer {
-            background: var(--soft-black);
-            color: #888;
-            padding: 60px 5%;
-            text-align: center;
-            font-size: 0.9rem;
-        }
+    .flagship-card {
+      background: linear-gradient(145deg, #101524 0%, #0B0E17 100%);
+      border: 1px solid rgba(124, 92, 252, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px var(--magic-glow);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-        footer .logo {
-            justify-content: center;
-            margin-bottom: 20px;
-            color: white;
-        }
+    .flagship-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--magic-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
-        footer .logo img {
-            filter: brightness(100);
-        }
+    .flagship-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(229, 201, 143, 0.1);
+      border: 1px solid rgba(229, 201, 143, 0.3);
+      color: var(--gold);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
 
-        footer p span {
-            color: #fff;
-        }
+    .flagship-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 16px;
+      color: #fff;
+    }
 
-        @media (max-width: 900px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+    .flagship-title span.brand-core { color: #fff; }
+    .flagship-title span.brand-action { color: var(--magic-purple-light); }
 
-            .hero p.tagline {
-                font-size: 1.2rem;
-            }
+    .flagship-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
 
-            .hero p.subtitle {
-                font-size: 1rem;
-            }
+    .flagship-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 32px;
+    }
 
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
+    .flagship-feat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
 
-            nav {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+    .flagship-feat-item span.icon {
+      color: var(--mint);
+      font-weight: bold;
+    }
+
+    .flagship-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-flagship-primary {
+      background: linear-gradient(135deg, var(--magic-purple), #4F38DF);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 24px rgba(124, 92, 252, 0.4);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-flagship-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(124, 92, 252, 0.6);
+    }
+
+    .btn-flagship-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-flagship-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .flagship-visual {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+    }
+
+    .flagship-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .flagship-visual:hover img {
+      transform: scale(1.03);
+    }
+
+    .flagship-live-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(8, 10, 15, 0.9);
+      border: 1px solid rgba(0, 229, 212, 0.4);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--mint);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* PROJECTS SECTION & TOOLBAR */
+    section.projects-section {
+      padding: 60px 0 100px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--magic-purple-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Interactive Toolbar */
+    .filter-toolbar {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      backdrop-filter: blur(14px);
+    }
+
+    .toolbar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+      max-width: 520px;
+    }
+
+    .search-input-wrap svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px 12px 46px;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--magic-purple);
+      background: rgba(124, 92, 252, 0.05);
+      box-shadow: 0 0 16px var(--magic-glow);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-dim);
+    }
+
+    .results-count {
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      background: var(--magic-purple);
+      border-color: var(--magic-purple);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 4px 14px var(--magic-glow);
+    }
+
+    /* PROJECT CARDS GRID */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 24px var(--magic-glow);
+    }
+
+    .project-thumb-box {
+      width: 100%;
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      background: #0B0E15;
+    }
+
+    .project-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-thumb-box img {
+      transform: scale(1.05);
+    }
+
+    .badge-status {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-status.live {
+      background: rgba(0, 229, 212, 0.15);
+      border: 1px solid rgba(0, 229, 212, 0.4);
+      color: var(--mint);
+    }
+
+    .badge-status.flagship {
+      background: rgba(229, 201, 143, 0.18);
+      border: 1px solid rgba(229, 201, 143, 0.5);
+      color: var(--gold);
+    }
+
+    .badge-status.dev {
+      background: rgba(124, 92, 252, 0.15);
+      border: 1px solid rgba(124, 92, 252, 0.4);
+      color: var(--magic-purple-light);
+    }
+
+    .badge-status.exp {
+      background: rgba(255, 71, 87, 0.15);
+      border: 1px solid rgba(255, 71, 87, 0.4);
+      color: var(--rose);
+    }
+
+    .badge-category {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(8, 10, 15, 0.85);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      backdrop-filter: blur(6px);
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .project-subtitle {
+      font-size: 0.86rem;
+      color: var(--magic-purple-light);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tag-badge {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-detail {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      padding: 6px 0;
+    }
+
+    .btn-detail:hover {
+      color: var(--magic-purple-light);
+    }
+
+    .btn-live-link {
+      background: rgba(124, 92, 252, 0.1);
+      border: 1px solid rgba(124, 92, 252, 0.3);
+      color: var(--magic-purple-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-live-link:hover {
+      background: var(--magic-purple);
+      color: #fff;
+      border-color: var(--magic-purple);
+      box-shadow: 0 4px 14px var(--magic-glow);
+    }
+
+    /* MODAL (TECHNICAL DEEP DIVE) */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-lg);
+      max-width: 760px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), 0 0 40px var(--magic-glow);
+      position: relative;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: sticky;
+      top: 0;
+      background: var(--bg-card);
+      z-index: 2;
+    }
+
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .modal-body {
+      padding: 32px;
+    }
+
+    .modal-spec-row {
+      margin-bottom: 24px;
+    }
+
+    .modal-spec-label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--magic-purple-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .modal-spec-value {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      line-height: 1.65;
+    }
+
+    .modal-footer {
+      padding: 20px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 14, 21, 0.6);
+    }
+
+    /* MANIFESTO / PHILOSOPHY */
+    section.manifesto-section {
+      padding: 80px 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 19, 29, 0.6) 50%, transparent 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .manifesto-quote {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.35;
+      max-width: 860px;
+      margin: 0 auto 24px;
+      color: #fff;
+    }
+
+    .manifesto-quote span {
+      color: var(--magic-purple-light);
+    }
+
+    .manifesto-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    .founder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+    }
+
+    .founder-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--magic-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .founder-info {
+      text-align: left;
+      font-size: 0.84rem;
+    }
+
+    .founder-name { font-weight: 700; color: #fff; }
+    .founder-role { color: var(--text-dim); }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #05070A;
+      border-top: 1px solid var(--border);
+      padding: 70px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin: 16px 0 24px;
+      line-height: 1.6;
+      max-width: 340px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--text-main);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .hero-title { font-size: 2.6rem; }
+      .flagship-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      header.site-header nav.header-nav { display: none; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-lead { font-size: 1.05rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Kreative Core Logo">
-            Kreative<span>Core</span>
+  <!-- Ambient Light Mesh -->
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-wrap">
+        <img src="logo.png" alt="Kreative Core Logo" class="brand-logo-img">
+        <div class="brand-title">Kreative<span>Core</span></div>
+        <span class="live-status-pill"><span class="pulse-dot"></span> Ecosystem</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="#projects" class="nav-item active">Tüm Projeler</a>
+        <a href="#flagship" class="nav-item">core.action</a>
+        <a href="vision.html" class="nav-item">Vision AI</a>
+        <a href="transcribe.html" class="nav-item">Transcribe TR</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="https://www.koraytasan.com" target="_blank" rel="noopener" class="nav-item">Koray Taşan ↗</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#projects" class="btn-header-cta">
+          <span>⚡</span> Projeleri Keşfet
         </a>
-        <nav>
-            <a href="#products" class="nav-link">Products</a>
-            <a href="blog.html" class="nav-link">Blog</a>
-            <a href="mailto:ben@koraytasan.com?subject=Kreative%20Core%20-%20Inquiry" class="nav-link">Contact</a>
-        </nav>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <section class="hero">
-        <h1>We Code the Routine.<br>You Create the Magic.</h1>
-        <p class="tagline">"Make It Simple. Make It Magic."</p>
-        <p class="subtitle">
-            Smart plugins for Adobe Creative Cloud that turn complex tasks into one-click miracles. Reclaim your time
-            for what truly matters: creativity.
-        </p>
-        <div class="cta-buttons">
-            <a href="#products" class="cta-button">Explore Products</a>
-            <a href="blog.html" class="cta-button secondary">Read Our Blog</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span>⚡ KREATIVE CORE INNOVATION LAB & ECOSYSTEM</span>
+      </div>
+
+      <h1 class="hero-title">
+        Stories → Systems<br>
+        <span class="gradient-text">Intelligent Products.</span>
+      </h1>
+
+      <p class="hero-lead">
+        Yapay zekâ tabanlı film stüdyosu motorları, offline NLE eklentileri, 3D WebXR simülasyonları, işitsel kimlikler ve yaşayan otonom dijital sistemler ekosistemi.
+      </p>
+
+      <p class="hero-motto">
+        "We Code the Routine. You Create the Magic."
+      </p>
+
+      <!-- Key Metrics Strip -->
+      <div class="hero-metrics-strip">
+        <div class="metric-box">
+          <div class="metric-number purple">12+</div>
+          <div class="metric-label">Aktif Sistem & Ürün</div>
         </div>
-    </section>
+        <div class="metric-box">
+          <div class="metric-number mint">15+ Yıl</div>
+          <div class="metric-label">Kreatif & Yönetmenlik Temeli</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-number gold">1000+</div>
+          <div class="metric-label">Üretilen Marka & Film İçeriği</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-number">100%</div>
+          <div class="metric-label">Yerel / Gizlilik Odaklı Mimari</div>
+        </div>
+      </div>
 
-    <section class="products" id="products">
-        <h2>Our Product Suite</h2>
-        <div class="product-grid">
+      <!-- Quick Jump Pills -->
+      <div class="hero-quick-pills">
+        <a class="quick-pill" onclick="filterProjects('studio')">🎬 core.action STUDIO</a>
+        <a class="quick-pill" onclick="filterProjects('plugins')">⚡ Vision & Transcribe AI</a>
+        <a class="quick-pill" onclick="filterProjects('audio')">🎵 khrysaor & Uyku Atlası</a>
+        <a class="quick-pill" onclick="filterProjects('3d')">🏎️ BUILD UP BUILD DOWN</a>
+        <a class="quick-pill" onclick="filterProjects('proptech')">🏠 Find My Home</a>
+        <a class="quick-pill" onclick="filterProjects('enterprise')">💼 B2B & Kurumsal SaaS</a>
+      </div>
+    </div>
+  </section>
 
-            <!-- VISION -->
-            <div class="product-card">
-                <h3>Kreative Core | Vision</h3>
-                <p class="product-subtitle">AI-Powered Visual Search for Premiere Pro</p>
-                <p>
-                    Stop scrubbing through hours of footage. Vision analyzes your clips with local AI and lets you
-                    search using natural language: "person smiling", "beach sunset", "product shot".
-                </p>
-                <ul>
-                    <li>Semantic search with CLIP AI</li>
-                    <li>Face recognition & clustering</li>
-                    <li>Auto-generate sequences ("The Lifesaver")</li>
-                    <li>100% offline - your footage never leaves your machine</li>
-                </ul>
-                <a href="vision.html" class="product-link">Learn More →</a>
+  <!-- Flagship Spotlight: core.action STUDIO -->
+  <section class="flagship-spotlight" id="flagship">
+    <div class="container">
+      <div class="flagship-card">
+        <div class="flagship-info">
+          <div class="flagship-badge">
+            <span>⚡ AMİRAL GEMİSİ · BAĞLANTILI STÜDYO SİSTEMİ</span>
+          </div>
+
+          <h2 class="flagship-title">
+            <span class="brand-core">core.</span><span class="brand-action">action</span> STUDIO
+          </h2>
+
+          <p class="flagship-desc">
+            Senaryo, kurgu, devamlılık, ses, renk, VFX ve teslimat... Yıllardır kopuk yazılımlar arasında parçalanan film üretim zinciri, tek bir yaşayan proje hafızası (Living Project Graph) üzerinde birleşiyor. 15 yıllık yönetmenlik ustalığı ile geliştirilmiş yeni nesil masaüstü NLE ve otonom sinema ekosistemi.
+          </p>
+
+          <div class="flagship-features">
+            <div class="flagship-feat-item">
+              <span class="icon">✓</span>
+              <span>12 Bağlantılı Uzman Motor</span>
+            </div>
+            <div class="flagship-feat-item">
+              <span class="icon">✓</span>
+              <span>MOVIE / SCENE / PLAN Seviyesi</span>
+            </div>
+            <div class="flagship-feat-item">
+              <span class="icon">✓</span>
+              <span>Sıfır Kayıplı Proje Hafızası</span>
+            </div>
+            <div class="flagship-feat-item">
+              <span class="icon">✓</span>
+              <span>Gerçek Zamanlı Sahne Devamlılığı</span>
+            </div>
+          </div>
+
+          <div class="flagship-actions">
+            <a href="https://www.koraytasan.com/core.action/" target="_blank" rel="noopener" class="btn-flagship-primary">
+              <span>🚀</span> core.action STUDIO Canlı Vitrini ↗
+            </a>
+            <a href="https://www.koraytasan.com/core.action/#engines" target="_blank" rel="noopener" class="btn-flagship-secondary">
+              <span>🎬</span> 12 Motoru İncele
+            </a>
+          </div>
+        </div>
+
+        <div class="flagship-visual">
+          <img src="assets/projects/core-action.png" alt="core.action STUDIO NLE Interface" loading="lazy">
+          <div class="flagship-live-tag">
+            <span class="pulse-dot"></span> NEXT-GEN AI NLE ARCHITECTURE
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Master Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-kicker">PROJE VE ÜRÜN PORTFÖYÜ</span>
+        <h2 class="section-title">Tüm İnovasyon & Ürün Ekosistemimiz</h2>
+        <p class="section-subtitle">
+          Kreative Core çatısı altında geliştirilen sinema teknolojileri, yapay zekâ motorları, 3D simülasyonlar ve yaratıcı girişimler.
+        </p>
+      </div>
+
+      <!-- Filter Toolbar -->
+      <div class="filter-toolbar">
+        <div class="toolbar-top">
+          <div class="search-input-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="projectSearch" class="search-input" placeholder="Proje adı, teknoloji veya anahtar kelime ara... (örn: Three.js, Whisper, Kurgu)">
+          </div>
+
+          <div class="results-count" id="resultsCount">
+            14 Proje Listeleniyor
+          </div>
+        </div>
+
+        <div class="filter-tabs" id="filterTabs">
+          <button class="tab-btn active" data-filter="all">Tümü (14)</button>
+          <button class="tab-btn" data-filter="studio">🎬 Stüdyo & Sinema AI</button>
+          <button class="tab-btn" data-filter="plugins">⚡ Adobe & NLE Eklentileri</button>
+          <button class="tab-btn" data-filter="audio">🎵 İşitsel & Müzik</button>
+          <button class="tab-btn" data-filter="3d">🌐 3D & Simülasyon</button>
+          <button class="tab-btn" data-filter="enterprise">💼 Kurumsal AI & SaaS</button>
+          <button class="tab-btn" data-filter="media">🎥 Film & Yönetmenlik</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="project-grid" id="projectGrid">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Deep Dive Modal -->
+  <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-spec-label" id="modalCategory">KATEGORİ</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: #fff;" id="modalTitle">Proje Başlığı</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Kapat">✕</button>
+      </div>
+
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="modal-footer">
+        <span style="font-size: 0.84rem; color: var(--text-dim);" id="modalRole">Rol: Product Architect</span>
+        <a href="#" target="_blank" rel="noopener" class="btn-live-link" id="modalLiveBtn">
+          <span>↗</span> Canlı Projeyi Ziyaret Et
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Philosophy & Manifesto Section -->
+  <section class="manifesto-section">
+    <div class="container">
+      <blockquote class="manifesto-quote">
+        "Biz rutini kodlarız; <span>sen büyü yaratırsın.</span>"
+      </blockquote>
+      <p class="manifesto-sub">
+        En iyi teknoloji, kendini unutturan teknolojidir. Sanatçının saatlerce süren tekrarlı işlerini tek tıkla ortadan kaldırarak yaratıcı zihni özgürleştiren sistemler inşa ediyoruz.
+      </p>
+
+      <div class="founder-badge">
+        <div class="founder-avatar">KT</div>
+        <div class="founder-info">
+          <div class="founder-name">Koray Taşan</div>
+          <div class="founder-role">Founder & AI Systems Architect · Kreative Core</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-wrap">
+            <img src="logo.png" alt="Logo" class="brand-logo-img">
+            <div class="brand-title">Kreative<span>Core</span></div>
+          </a>
+          <p>
+            Akıllı sistemler, yeni nesil kurgu teknolojileri, 3D WebXR ve yapay zekâ destekli medya inovasyon laboratuvarı.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--magic-purple-light);">
+            // Make It Simple. Make It Magic.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Amiral Sistemler</h4>
+          <ul>
+            <li><a href="https://www.koraytasan.com/core.action/" target="_blank" rel="noopener">core.action STUDIO</a></li>
+            <li><a href="vision.html">Kreative Core | Vision</a></li>
+            <li><a href="transcribe.html">Kreative Core | Transcribe TR</a></li>
+            <li><a href="https://www.koraytasan.com/buildupbuilddown/" target="_blank" rel="noopener">BUILD UP BUILD DOWN</a></li>
+            <li><a href="https://www.koraytasan.com/findmyhome/" target="_blank" rel="noopener">Find My Home</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>İşitsel & İçerik</h4>
+          <ul>
+            <li><a href="https://www.koraytasan.com/sozler/" target="_blank" rel="noopener">khrysaor Şarkı Arşivi</a></li>
+            <li><a href="https://www.koraytasan.com/MithyLeaks/" target="_blank" rel="noopener">MithyLeaks</a></li>
+            <li><a href="https://www.youtube.com/@UykuAtlasi" target="_blank" rel="noopener">Uyku Atlası</a></li>
+            <li><a href="blog.html">Teknoloji Blogu</a></li>
+            <li><a href="https://www.koraytasan.com/imzala/" target="_blank" rel="noopener">AI İmzala</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Bağlantılar</h4>
+          <ul>
+            <li><a href="https://www.koraytasan.com" target="_blank" rel="noopener">Koray Taşan Portfolio ↗</a></li>
+            <li><a href="https://github.com/korrayt" target="_blank" rel="noopener">GitHub / korrayt ↗</a></li>
+            <li><a href="https://linkedin.com/in/koraytasan" target="_blank" rel="noopener">LinkedIn / koraytasan ↗</a></li>
+            <li><a href="mailto:ben@koraytasan.com">ben@koraytasan.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>Kreative Core Technologies</strong>. Tüm hakları saklıdır.</div>
+        <div>Designed & Engineered with Precision by <strong>Koray Taşan</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECTS DATABASE & SCRIPT -->
+  <script>
+    const PROJECTS = [
+      {
+        id: "core-action-studio",
+        title: "core.action STUDIO",
+        subtitle: "Next-Gen AI NLE & Connected Cinema Studio Ecosystem",
+        category: "studio",
+        categoryLabel: "Stüdyo & Sinema AI",
+        status: "flagship",
+        statusLabel: "FLAGSHIP",
+        image: "assets/projects/core-action.png",
+        tags: ["AI NLE", "Living Project Graph", "12 Engines", "Continuity", "Hollywood Standard"],
+        desc: "Fikirden final master'a tüm prodüksiyon zincirini tek bir yaşayan proje grafında birleştiren, 12 uzman motorlu yeni nesil masaüstü stüdyo ekosistemi.",
+        problem: "Senaryodan montaja, sesten renge kopuk yazılımlar arasında kaybolan bağlam, hantal dosya aktarımları ve revizyon karmaşası.",
+        system: "12 bağımsız uzman motor (Edit, Script, Audio, Color, VFX...), MOVIE/SCENE/PLAN seviyeleri, SQLite WAL köprüsü ve gerçek zamanlı bağlam senkronizasyonu.",
+        tech: "DirectStorage 1.2, DirectX 12 Compute, SQLite WAL, Whisper Phonetics, OpenUSD",
+        role: "Product Architect, Director & Lead Designer",
+        liveUrl: "https://www.koraytasan.com/core.action/"
+      },
+      {
+        id: "kreative-core-vision",
+        title: "Kreative Core | Vision",
+        subtitle: "AI-Powered Visual Search & Auto-Sequencer for Premiere Pro",
+        category: "plugins",
+        categoryLabel: "Adobe & NLE Eklentileri",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/vision.png",
+        tags: ["Premiere Pro Plugin", "CLIP AI", "Face Recognition", "Natural Language Search", "100% Offline"],
+        desc: "Yüzlerce saatlik video arşivini doğal dille anında tarayan; kişi, nesne ve sahne eşleştirmesiyle otomatik sekans üreten akıllı NLE aracı.",
+        problem: "Kurgucunun aradığı bir planı bulmak için saatlerce yüzlerce ham çekimi tek tek taramasından doğan devasa zaman kaybı.",
+        system: "OpenAI CLIP tabanlı semantik arama, yerel yüz tanıma kümelemesi, Premiere Pro CEP/UXP paneli ve sıfır bulut bağımlılığı.",
+        tech: "CLIP AI, FaceNet, Premiere Pro UXP/CEP, Node.js, WebAssembly",
+        role: "Founder, System Architect & Algorithm Designer",
+        liveUrl: "vision.html"
+      },
+      {
+        id: "kreative-core-transcribe",
+        title: "Kreative Core | Transcribe TR",
+        subtitle: "Offline Turkish Speech-to-Text Whisper Engine for NLE",
+        category: "plugins",
+        categoryLabel: "Adobe & NLE Eklentileri",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/transcribe.png",
+        tags: ["Speech-to-Text", "Whisper AI", "Türkçe Optimize", "Subtitles", "Zero Cloud Cost"],
+        desc: "10 dakikalık videoyu 20 saniyede %98 doğrulukla deşifre eden, doğrudan Premiere Pro zaman çizelgesine altyazı ve metin dizen yerel deşifre çözümü.",
+        problem: "Bulut deşifre servislerinin yüksek dakika başı ücretleri, gizlilik riskleri ve Türkçe seslerdeki aksan/terminoloji zafiyetleri.",
+        system: "Yerel GPU destekli optimize Whisper motoru, kelime seviyesinde zaman kodu hizalama ve native altyazı track üreticisi.",
+        tech: "faster-whisper, C++ Inference, Premiere Pro Progeny, Python Sidecar",
+        role: "Architecture & Machine Learning Pipeline",
+        liveUrl: "transcribe.html"
+      },
+      {
+        id: "khrysaor",
+        title: "khrysaor",
+        subtitle: "Anonymous Nocturnal Music Identity & Studio Soundtracks",
+        category: "audio",
+        categoryLabel: "İşitsel & Müzik",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/sozler.jpg",
+        tags: ["Nocturnal Audio", "Studio Master", "Sussuz Soundtrack", "Lyrics Archive", "Atmospheric"],
+        desc: "İnsan yüzü göstermeyen, kıyılar, geceler ve iç yolculuklar etrafında konumlanan sinematik müzik evreni (Bataklık, Hırsız, Biri Varmış, Bilmem Ben De).",
+        problem: "Müziğin klasik şarkıcı figürlerine sıkışması; mekân, gece ve sinematik atmosfer odaklı anonim audiovisual markaların eksikliği.",
+        system: "EBU R128 (-14 LUFS) mastering, Glass Mirror Depth Blur lirik video boru hattı ve müstakil web lirik defteri arşivi.",
+        tech: "Audio DSP, EBU R128, YouTube Studio API, OpenGraph Audio, Cinema Grading",
+        role: "Music Producer, Lyricist & Audiovisual Director",
+        liveUrl: "https://www.koraytasan.com/sozler/"
+      },
+      {
+        id: "buildup-builddown",
+        title: "BUILD UP BUILD DOWN",
+        subtitle: "1:1 OEM CAD Automotive 3D Digital Twin Simulator",
+        category: "3d",
+        categoryLabel: "3D & Simülasyon",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/buildup.jpg",
+        tags: ["Three.js", "WebXR", "Digital Twin", "OEM CAD", "9400+ Parts"],
+        desc: "Gerçek 1:1 OEM CAD doğruluğunda, 9.400+ parça ve 5.000+ fastener ile tarayıcıda kurulumsuz çalışan interaktif otomotiv dijital ikiz simülatörü.",
+        problem: "Ağır endüstriyel mühendislik CAD modellerinin web tarayıcılarında akıcı ve sökülüp takılabilir şekilde çalıştırılamaması.",
+        system: "Hafifletilmiş hiyerarşik 3D sahne grafı, parça montaj ağacı, WebGL optimizasyonları ve anlık parça izolasyon kontrolleri.",
+        tech: "Three.js, WebGL, glTF/GLB Compression, CAD Geometry Simplification",
+        role: "Concept, 3D Engine Architecture & UX Design",
+        liveUrl: "https://www.koraytasan.com/buildupbuilddown/"
+      },
+      {
+        id: "find-my-home",
+        title: "Find My Home",
+        subtitle: "3D Geospatial Real Estate & Dual-Commute Lifestyle Engine",
+        category: "3d",
+        categoryLabel: "3D & Simülasyon",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/findmyhome.jpg",
+        tags: ["PropTech", "3D Geospatial", "Dual-Commute", "Portal Aggregation", "React/Vite"],
+        desc: "Türkiye'deki tüm emlak ilan sitelerini tek çatı altında toplayan, 3D uydu katmanı ve ikili işe gidiş rotasıyla ideal yaşamı eşleştiren motor.",
+        problem: "Farklı portallar arasında kaybolmak, evin semt dokusunu ve iki kişinin işe ulaşım sürelerini aynı anda analiz edememek.",
+        system: "3D mekânsal harita motoru, çoklu ilan scraper/indeksleyici, ikili matris rota analitiği ve yaşam tarzı filtreleri.",
+        tech: "React, Vite, 3D Geospatial UI, Route Matching, OpenStreetMap",
+        role: "Product Architecture & Full-Stack Development",
+        liveUrl: "https://www.koraytasan.com/findmyhome/"
+      },
+      {
+        id: "mithyleaks",
+        title: "MithyLeaks",
+        subtitle: "Independent Investigative Mythology & Narrative Archive",
+        category: "audio",
+        categoryLabel: "İşitsel & Müzik",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/mithyleaks.jpg",
+        tags: ["Mythology", "Investigative", "Covert Docs", "Trilingual", "Narrative Archive"],
+        desc: "Gizli kaynaklardan süzülen anlatılar ışığında mitolojik arkeolojiyi ve gizemli olayları 3 dilde (TR, EN, LT) sunan bağımsız sızıntı platformu.",
+        problem: "Geleneksel mitoloji ve tarih içeriklerinin didaktik ve sıkıcı olması; kaynak temelli araştırma ile anlatı gizeminin buluşamaması.",
+        system: "Üç dilli dinamik tab navigasyonu, OpenGraph kartları ve gizli dosya estetiğinde interaktif okuma paneli.",
+        tech: "HTML5, Vanilla JS, Multi-language Routing, Responsive Layout",
+        role: "Lead Investigator, Storyteller & Platform Architect",
+        liveUrl: "https://www.koraytasan.com/MithyLeaks/"
+      },
+      {
+        id: "uyku-atlasi",
+        title: "Uyku Atlası",
+        subtitle: "Semantic Foley & Nocturnal Storytelling YouTube Channel",
+        category: "audio",
+        categoryLabel: "İşitsel & Müzik",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/sozler.jpg",
+        tags: ["Semantic Foley", "Audio DSP", "EBU R128 (-21 LUFS)", "Storytelling", "Sleepscapes"],
+        desc: "'Duyulan her kelime bir akustik ize dönüşür' ilkesiyle üretilen; semantik foley kurgusu ve masalsı gece anlatıları kanalı.",
+        problem: "Mevcut uyku içeriklerinin tekdüze loop'lardan ibaret olması; anlatı ile işitsel ortamın duygusal bağ kuramaması.",
+        system: "Kelime bazlı ses kütüphanesi, dinamik zarf otomasyonu, -21 LUFS entegre broadcast mastering ve sinematik karanlık görseller.",
+        tech: "Audio DSP, EBU R128 (-21 LUFS), Semantic Foley, DaVinci Fairlight",
+        role: "Creator, Sound Designer & Audio Engineer",
+        liveUrl: "https://www.youtube.com/@UykuAtlasi"
+      },
+      {
+        id: "blt-proposal-system",
+        title: "BLT Intelligent Product & Proposal System",
+        subtitle: "Enterprise B2B Dynamic Pricing & Instant Quotation Engine",
+        category: "enterprise",
+        categoryLabel: "Kurumsal AI & SaaS",
+        status: "live",
+        statusLabel: "ENTERPRISE",
+        image: "assets/projects/blt.jpg",
+        tags: ["B2B Automation", "SQLite", "PowerShell Core", "Dynamic Margin", "Excel Engine"],
+        desc: "Teknik katalogları yapılandırılmış ürün veritabanına dönüştüren; ürün seçimi ve teklif süreçlerini saniyeler içinde otomatikleştiren kurumsal sistem.",
+        problem: "Binlerce ürün kalemi olan teknik kataloglardan manuel teklif hazırlamanın saatler sürmesi ve marj hatalarına yol açması.",
+        system: "PowerShell Core hesaplama çekirdeği, SQLite kalıcılık katmanı, çoklu para birimi ve dinamik marj motoru.",
+        tech: "PowerShell Core, SQLite, JSON Schema, OpenXML Automation",
+        role: "End-to-End Product Architecture & Core Engine",
+        liveUrl: "https://www.koraytasan.com/#ai-products"
+      },
+      {
+        id: "ai-engineering-quotation",
+        title: "AI-Assisted Engineering & Quotation Platform",
+        subtitle: "CAD / DXF Parsing & Automated Bill-of-Quantities Intelligence",
+        category: "enterprise",
+        categoryLabel: "Kurumsal AI & SaaS",
+        status: "dev",
+        statusLabel: "IN DEV",
+        image: "assets/projects/engineering.jpg",
+        tags: ["CAD Intelligence", "DXF Parser", "LLM Extraction", "Metraj", "B2B SaaS"],
+        desc: "DXF çizimleri, keşif listeleri ve teknik şartnameleri analiz ederek mühendislik teklif ve metraj süreçlerini otonomlaştıran akıllı platform.",
+        problem: "Mühendislik projelerinde şartname ve CAD çizimlerinden metraj çıkarmanın günlerce sürmesi ve insan hatası riski.",
+        system: "DXF parser, vektör çizim analitiği, LLM tabanlı şartname ayrıştırma ve otomatik keşif tablolama modülü.",
+        tech: "Python, ezdxf, Semantic LLM Parsing, FastAPI",
+        role: "System Design, AI Prompt & Parsing Architecture",
+        liveUrl: "https://www.koraytasan.com/#ai-products"
+      },
+      {
+        id: "ai-signature-imzala",
+        title: "AI Signature Generator (İmzala)",
+        subtitle: "Responsive Cross-Client Email Signature Generator Micro-SaaS",
+        category: "enterprise",
+        categoryLabel: "Kurumsal AI & SaaS",
+        status: "live",
+        statusLabel: "LIVE",
+        image: "assets/projects/imzala.jpg",
+        tags: ["Micro-SaaS", "Email Standards", "Zero-Dependency", "HTML Generator"],
+        desc: "Marka kimliği, profil fotoğrafı ve sosyal profillere göre Outlook, Gmail ve Apple Mail'de hatasız çalışan e-posta imzası oluşturan web aracı.",
+        problem: "E-posta istemcileri arasında bozulan HTML tabloları, karmaşık CSS gereksinimleri ve marka tutarsızlıkları.",
+        system: "Gerçek zamanlı canlı önizleme, SVG/PNG logo işleme ve tek tıkla panoya zengin metin kopyalama motoru.",
+        tech: "HTML5, CSS Table Standards, Zero-Dependency JS, Web Canvas",
+        role: "Full-Stack Development & UX/UI Design",
+        liveUrl: "https://www.koraytasan.com/imzala/"
+      },
+      {
+        id: "cor3us-coremag",
+        title: "cor3us & CoreMag",
+        subtitle: "Zero-Leakage Privacy-First Urban Social Discovery & Magazine",
+        category: "enterprise",
+        categoryLabel: "Kurumsal AI & SaaS",
+        status: "dev",
+        statusLabel: "IN DEV",
+        image: "assets/projects/cor3us.jpg",
+        tags: ["Privacy-First", "Intent Grid", "Urban Culture", "Bilingual Magazine", "No-GPS Leak"],
+        desc: "Kent kültürü ve anlık niyetler (Intent Grid) üzerine kurulu; sıfır GPS sızıntılı gizlilik mimarisine sahip bağımsız platform ve CoreMag yayını.",
+        problem: "Mevcut sosyal ağlardaki algoritmik gürültü, konum mahremiyeti istismarı ve yüzeysel etkileşim döngüsü.",
+        system: "Semt bazlı çift seviyeli konum maskelemesi, şifreli mesajlaşma, niyet kartları (Pulse) ve çift dilli editoryal dergi altyapısı.",
+        tech: "Zero-Leakage Security, E2E Encryption, Editorial CMS, Intent Grid",
+        role: "Product Architecture, Design System & Platform Blueprint",
+        liveUrl: "https://www.koraytasan.com/#ai-products"
+      },
+      {
+        id: "amblyopia-dtx",
+        title: "Amblyopia DTX",
+        subtitle: "VR Dichoptic Visual Stimulation & Digital Therapeutics Platform",
+        category: "3d",
+        categoryLabel: "3D & Simülasyon",
+        status: "exp",
+        statusLabel: "EXPERIMENTAL",
+        image: "assets/projects/amblyopia.jpg",
+        tags: ["WebXR", "Digital Health", "Dichoptic Training", "Visual Therapy", "VR"],
+        desc: "Ambliyopi (göz tembelliği) tedavisinde geleneksel kapama yöntemlerini aşan; iki göze bağımsız kontrast sunan sürükleyici VR terapi platformu.",
+        problem: "Göz kapama bantlarının çocuklarda sosyal çekingenlik ve düşük uyum yaratması, yetişkinlerde tedavi seçeneği sunulmaması.",
+        system: "VR kontrast modülasyon motoru, oyunlaştırılmış görevler, bakış takip entegrasyonu ve seans bazlı ilerleme raporlaması.",
+        tech: "WebXR, Three.js, Dichoptic Visual Engine, Sensory Feedback",
+        role: "Concept, XR Interaction Design, DTx Research",
+        liveUrl: "https://www.koraytasan.com/#ai-products"
+      },
+      {
+        id: "film-commercial-media",
+        title: "Film & Commercial Media Production",
+        subtitle: "15+ Years Directing, Post Production & 1000+ Branded Videos",
+        category: "media",
+        categoryLabel: "Film & Yönetmenlik",
+        status: "live",
+        statusLabel: "1000+ WORKS",
+        image: "assets/projects/media-showreel.jpg",
+        tags: ["Directing", "Editing & Color", "Commercials", "Samsung", "TRT Tabii", "Hürriyet"],
+        desc: "Samsung, TRT Tabii Beş Şehir, Hürriyet DEV, Arçelik, Borusan Oto ve OPPO için üretilmiş 1000'den fazla televizyon ve dijital reklam/belgesel projesi.",
+        problem: "Stratejiden sete, setten montaja aktarılırken kaybolan yönetmenlik vizyonu ve ritim tutarsızlıkları.",
+        system: "15+ yıllık yönetmenlik, senaryo, set yönetimi, renk derecelendirme ve yüksek tempolu kurgu ustalığı.",
+        tech: "Cinema Cameras, DaVinci Resolve, Premiere Pro, Sound Mixing",
+        role: "Director, Producer & Lead Editor",
+        liveUrl: "https://www.koraytasan.com/#media"
+      }
+    ];
+
+    // DOM Elements
+    const grid = document.getElementById('projectGrid');
+    const searchInput = document.getElementById('projectSearch');
+    const filterTabs = document.getElementById('filterTabs');
+    const resultsCount = document.getElementById('resultsCount');
+    const modal = document.getElementById('detailModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const modalRole = document.getElementById('modalRole');
+    const modalLiveBtn = document.getElementById('modalLiveBtn');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function renderCards() {
+      grid.innerHTML = '';
+      const filtered = PROJECTS.filter(item => {
+        const matchesCategory = (currentFilter === 'all') || (item.category === currentFilter);
+        if (!matchesCategory) return false;
+
+        if (!searchQuery) return true;
+        const q = searchQuery.toLowerCase();
+        const inTitle = item.title.toLowerCase().includes(q);
+        const inSub = item.subtitle.toLowerCase().includes(q);
+        const inDesc = item.desc.toLowerCase().includes(q);
+        const inTags = item.tags.some(t => t.toLowerCase().includes(q));
+        const inTech = item.tech.toLowerCase().includes(q);
+        return inTitle || inSub || inDesc || inTags || inTech;
+      });
+
+      resultsCount.textContent = `${filtered.length} Proje Listeleniyor`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-muted);">
+            <p style="font-size: 1.2rem; margin-bottom: 8px;">Aradığınız kriterde proje bulunamadı.</p>
+            <p style="font-size: 0.9rem; color: var(--text-dim);">Filtreyi sıfırlamak için arama çubuğunu temizleyebilirsiniz.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'project-card';
+        card.innerHTML = `
+          <div class="project-thumb-box">
+            <img src="${p.image}" alt="${p.title}" loading="lazy">
+            <span class="badge-status ${p.status}">${p.statusLabel}</span>
+            <span class="badge-category">${p.categoryLabel}</span>
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">${p.title}</h3>
+            <p class="project-subtitle">${p.subtitle}</p>
+            <p class="project-desc">${p.desc}</p>
+
+            <div class="project-tags">
+              ${p.tags.map(t => `<span class="tag-badge">${t}</span>`).join('')}
             </div>
 
-            <!-- TRANSCRIBE TR -->
-            <div class="product-card">
-                <h3>Kreative Core | Transcribe TR</h3>
-                <p class="product-subtitle">Turkish Speech-to-Text for Premiere Pro</p>
-                <p>
-                    Transcribe a 10-minute video in 20 seconds with 98% accuracy. No cloud, no credits, no waiting. Your
-                    audio stays private, your workflow stays fast.
-                </p>
-                <ul>
-                    <li>Lightning-fast local processing</li>
-                    <li>OpenAI Whisper engine (Turkish optimized)</li>
-                    <li>Native Premiere Pro integration</li>
-                    <li>One-time payment, lifetime use</li>
-                </ul>
-                <a href="transcribe.html" class="product-link">Learn More →</a>
+            <div class="project-footer">
+              <button class="btn-detail" onclick="openDetailModal('${p.id}')">
+                <span>🔍</span> Mimari Detaylar
+              </button>
+              <a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn-live-link">
+                <span>↗</span> Canlı İncele
+              </a>
             </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
 
+    function filterProjects(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === cat);
+      });
+      renderCards();
+      const el = document.getElementById('projects');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Modal Details
+    function openDetailModal(id) {
+      const p = PROJECTS.find(item => item.id === id);
+      if (!p) return;
+
+      modalCategory.textContent = p.categoryLabel + " · " + p.statusLabel;
+      modalTitle.textContent = p.title;
+      modalRole.textContent = "Rol: " + p.role;
+      modalLiveBtn.href = p.liveUrl;
+
+      modalBody.innerHTML = `
+        <div style="margin-bottom: 24px;">
+          <img src="${p.image}" alt="${p.title}" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border);">
         </div>
-    </section>
 
-    <section class="manifesto">
-        <h2>"Technology That Makes You Forget Technology."</h2>
-        <p>
-            The best technology is invisible. We take months of engineering and compress it into a single button. When
-            an artist spends hours on a task that should take seconds, that's not workflow — that's "busywork". Kreative
-            Core eliminates the busywork so you can focus on the magic only you can create.
-        </p>
-    </section>
-
-    <section class="blog-preview">
-        <h2>Insights & Resources</h2>
-        <div class="blog-link-center">
-            <a href="blog.html">Visit Our Blog →</a>
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Proje Tanımı & Kapsam</span>
+          <p class="modal-spec-value">${p.desc}</p>
         </div>
-    </section>
 
-    <footer>
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Logo">
-            Kreative<span>Core</span>
-        </a>
-        <p>&copy; 2025 <span>Kreative Core Technologies</span>. All rights reserved.</p>
-        <p style="margin-top:10px; font-size: 0.8rem;">Developed with precision by Koray Taşan.</p>
-        <p style="margin-top:15px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #555;">
-            // Core Architecture by KT.
-        </p>
-    </footer>
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Çözülen Problem</span>
+          <p class="modal-spec-value" style="color: #ff9f89;">${p.problem}</p>
+        </div>
 
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Sistem & Çekirdek Mimari</span>
+          <p class="modal-spec-value" style="color: #72ffdb;">${p.system}</p>
+        </div>
+
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Kullanılan Teknoloji Yığını (Tech Stack)</span>
+          <p class="modal-spec-value" style="font-family: var(--font-mono); font-size: 0.88rem; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border);">
+            ${p.tech}
+          </p>
+        </div>
+      `;
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    // Toolbar Filter click
+    filterTabs.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-btn')) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        currentFilter = e.target.dataset.filter;
+        renderCards();
+      }
+    });
+
+    // Search Input event
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderCards();
+    });
+
+    // Initial render
+    renderCards();
+  </script>
 </body>
-
 </html>
